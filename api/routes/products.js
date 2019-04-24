@@ -9,8 +9,14 @@ router.get('/', (req, res, next) => {
 });
 //POST
 router.post('/', (req, res, next) => {
+    const product = {
+        name:req.body.name,
+        price: req.body.price,
+    }
+    //using BodyParser
     res.status(200).json({
-        message: 'Hachibi POST'
+        message: 'Hachibi POST',
+        createProducts:product
     });
 });
 //GET With ID params
